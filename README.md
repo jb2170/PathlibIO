@@ -11,3 +11,16 @@ Reads from stdin if `-` is passed as the path, performing actions on each line r
 ## Installation
 
 `$ pip install PathlibIO` from PyPI
+
+## Examples
+
+```
+$ pathlibio suffix README.md
+.md
+$ pathlibio exists README.md && echo Hello
+Hello
+$ pathlibio is_char_device /dev/tty && echo "It's tty time"
+It's tty time
+$ echo pyproject.toml | pathlibio with_suffix - .json # in an ideal world...
+pyproject.json
+```
